@@ -4,17 +4,10 @@ import { useState } from 'react';
 function PhotoListItems(props) {
     const { title, id, url } = props.data.listItem;
     const { handleCompareChanges } = props.data;
+    // state to track local compare for each items
     const [isCompare, setIsCompare] = useState(false);
     
     const handleClick = () => {
-        // if (!isCompare) {
-        //     console.log(props.data.listItem)
-        //     handleAddTableData(props.data.listItem);
-        // } else {
-        //     console.log(props.data.listItem)
-        //     handleRemoveTableData(props.data.listItem);
-        // }
-        // handleCompare();
         setIsCompare(!isCompare);
         handleCompareChanges(props.data.listItem, isCompare);
     }

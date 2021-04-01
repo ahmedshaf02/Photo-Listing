@@ -12,7 +12,6 @@ function PhotoListing() {
     const [photoData, setPhotoData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [compareTableData, setCompareTableData] = useState([]);
-    const [isCompare, setIsCompare] = useState(false);
 
     // to handle compare button changes
     const handleCompareChanges = (tableRow, compare) => {
@@ -26,7 +25,7 @@ function PhotoListing() {
             setCompareTableData([...compareTableData, tableRow]);
         }
     }
-    console.log(compareTableData)
+    // console.log(compareTableData)
     useEffect(() => {
         // to get api photo data
         async function getPhotoData() {
@@ -57,7 +56,6 @@ function PhotoListing() {
                         photoData && photoData.map(ele => {
                             return <PhotoListItems data={{ 
                                 listItem: ele,
-                                isCompare,
                                 handleCompareChanges }} 
                                 key={ele.id} />
                         }) 
